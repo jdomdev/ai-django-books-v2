@@ -1,0 +1,83 @@
+# Entorno virtual
+.venv/
+venv/
+env/
+ENV/
+
+# Archivos de configuración de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Archivos de configuración de Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+media/
+staticfiles/
+
+# Archivos de configuración sensible
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+secrets.json
+
+# Archivos de IDE y editores
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# Archivos de sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de base de datos local
+*.sqlite3
+*.db
+
+# Archivos de migraciones (opcional, dependiendo de tu flujo de trabajo)
+# migrations/
+
+# Archivos de caché
+.pytest_cache/
+.cache/
+
+# Archivos de cobertura
+.coverage
+htmlcov/
+
+# Archivos de paquetes
+*.egg
+*.egg-info/
+dist/
+build/
+pip-wheel-metadata/
+
+# Archivos de Jupyter Notebook
+.ipynb_checkpoints/
+
+# Archivos de Node.js (si usas herramientas frontend como Webpack)
+node_modules/
+npm-debug.log*
+
+# Archivos de Docker (si usas Docker)
+docker-compose.yml
+Dockerfile
+.dockerignore
+
+# Archivos de pre-commit (si usas pre-commit hooks)
+.pre-commit-config.yaml
+
+# Archivos de PyCharm (si usas PyCharm)
+.idea/
+*.iml
+
+# Archivos de Visual Studio Code (si usas VSCode)
+.vscode/
