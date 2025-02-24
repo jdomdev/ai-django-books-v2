@@ -1,6 +1,5 @@
 
 [ERROR]
-
 (.venv) (base) juandomingo@hp-elitebook-840-G5:~/factoriaf5/mod01-labs/django-books-04-v2/books_manager
 $ uv add mysqlclient
 Resolved 7 packages in 81ms
@@ -56,6 +55,5 @@ Resolved 7 packages in 81ms
   
 
 [SOLUTION]
-
 sudo apt update
 sudo apt install build-essential default-libmysqlclient-dev python3-dev
