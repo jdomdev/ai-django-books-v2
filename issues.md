@@ -57,3 +57,71 @@ Resolved 7 packages in 81ms
 [SOLUTION]
 sudo apt update
 sudo apt install build-essential default-libmysqlclient-dev python3-dev
+
+
+Para modificar el mensaje de los dos últimos commits y mover la rama `origin/main` al último commit (HEAD), puedes seguir estos pasos:
+
+### 1. Modificar los mensajes de los dos últimos commits
+Para modificar los mensajes de los dos últimos commits, puedes usar el comando `git rebase -i` (rebase interactivo). Aquí te explico cómo hacerlo:
+
+1. **Inicia un rebase interactivo para los dos últimos commits:**
+   ```bash
+   git rebase -i HEAD~2
+   ```
+
+   Esto abrirá un editor con los dos últimos commits, algo como esto:
+   ```
+   pick abc123 Primer commit
+   pick def456 Segundo commit
+   ```
+
+2. **Cambia `pick` por `reword` para los commits que deseas modificar:**
+   ```
+   reword abc123 Primer commit
+   reword def456 Segundo commit
+   ```
+
+3. **Guarda y cierra el editor.** Git te pedirá que edites el mensaje de cada commit, uno por uno.
+
+4. **Edita los mensajes de los commits** según lo que desees y guarda los cambios.
+
+### 2. Mover la rama `origin/main` al último commit (HEAD)
+Si deseas mover la rama `origin/main` para que apunte al último commit (HEAD), puedes hacerlo de la siguiente manera:
+
+1. **Verifica que estás en la rama correcta y que tienes el último commit (HEAD):**
+   ```bash
+   git checkout main  # Asegúrate de estar en la rama main
+   git log           # Verifica que HEAD es el commit que deseas
+   ```
+
+2. **Mueve la rama `origin/main` al último commit (HEAD):**
+   ```bash
+   git branch -f origin/main HEAD
+   ```
+
+   Esto fuerza a la rama `origin/main` a apuntar al commit actual (HEAD).
+
+3. **Si estás trabajando con un repositorio remoto, necesitas enviar los cambios:**
+   ```bash
+   git push origin main --force
+   ```
+
+   **Nota:** Usar `--force` es necesario porque estás reescribiendo el historial. Ten cuidado al hacer esto, especialmente si estás trabajando en un repositorio compartido.
+
+### Resumen de comandos
+```bash
+# Modificar los mensajes de los dos últimos commits
+git rebase -i HEAD~2
+# Cambia 'pick' por 'reword' para los commits que deseas modificar
+# Edita los mensajes de los commits
+
+# Mover origin/main al último commit (HEAD)
+git branch -f origin/main HEAD
+git push origin main --force
+```
+
+### Advertencia
+- **Reescribir el historial** puede causar problemas si otros colaboradores están trabajando en la misma rama. Asegúrate de comunicar estos cambios a tu equipo.
+- Si no tienes permisos para hacer `push --force` en el repositorio remoto, necesitarás coordinarte con el administrador del repositorio.
+
+¡Espero que esto te ayude a lograr lo que necesitas! 😊
